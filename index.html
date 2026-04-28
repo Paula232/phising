@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maldición</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        #mensaje {
+            display: none;
+            font-size: 60px;
+            color: red;
+            font-weight: bold;
+            margin-top: 40px;
+            animation: aparecer 0.5s ease-in;
+        }
+        #imagenCholo {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: aparecer 0.5s ease-in;
+        }
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Has caido en la maldicion de barak y michelle!!</h1>
+    <img id="imagenMaldicion" src="imagenEjemlo.png" alt="Imagen de la maldición">
+    <div id="mensaje">¡Jamas saldras de esta maldicion!</div>
+    <img id="imagenCholo" src="cholo.png" alt="Cholo">
+    <h2>¡Cuidado con lo que deseas!</h2>
+    <p>Esta maldición te seguirá a donde vayas, ¡así que ten cuidado con tus decisiones!</p>
+    <h3>Haz click en la imagen para romper la maldición</h3>
+    
+    <script>
+        document.getElementById('imagenMaldicion').addEventListener('click', function() {
+            const mensaje = document.getElementById('mensaje');
+            const imagenCholo = document.getElementById('imagenCholo');
+            
+            mensaje.style.display = 'block';
+            
+            // Mostrar la imagen cholo después de 1.5 segundos
+            setTimeout(function() {
+                imagenCholo.style.display = 'block';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
